@@ -8,9 +8,12 @@
     "prepare": "husky install",
     "lint": "eslint .",
     "lint:fix": "npm run lint -- --fix",
-    "test": "jest --passWithNoTests --no-cache --runInBand",
-    "test:watch": "npm t -- --watch",
-    "test:staged": "npm t -- --findRelatedTests"
+    "test": "jest --passWithNoTests --silent --noStackTrace --no-cache --runInBand",
+    "test:verbose": "jest --passWithNoTests --no-cache --runInBand",
+    "test:unit": "npm test -- --watch -c jest-unit-config.js",
+    "test:integration": "npm test -- --watch -c jest-integration-config.js",
+    "test:staged": "npm test -- --findRelatedTests",
+    "test:ci": "npm test -- --coverage"
   },
   "devDependencies": {
     "@types/jest": "^29.2.3",
